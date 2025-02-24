@@ -1,24 +1,4 @@
 import Link from "next/link";
-import { title } from "process";
-
-
-const SectionWrapper: React.FC<{ children: React.ReactNode, headingText: string, className?: string | '', title: string}> = 
-                              ({ children, headingText, className}) => {
-
-
-
-  return (
-    <section className={`${className} w-screen h-screen`}>
-        <h1 className="w-full min-h-[68px] bg-[#3a3940] text-white text-[2.5rem] grid place-items-center">
-          {headingText}
-        </h1>
-
-        <div>
-          {children}
-        </div>
-    </section>
-  )
-}
 
 export default function Home() {
 
