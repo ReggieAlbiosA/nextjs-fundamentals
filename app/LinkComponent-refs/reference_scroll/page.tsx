@@ -17,13 +17,13 @@ export default function Page(){
             <nav className='ml-[20%]'>
                 <ul className='flex gap-x-[15px] items-center text-white'>
                     <li>
-                        <Link href="#section1" className='hover:underline' prefetch={true} scroll={true}>Section1</Link>
+                        <Link href="#section1" className='hover:underline' prefetch={false} scroll={true}>Section1</Link>
                     </li>
                     <li>
-                        <Link href="#section2" className='hover:underline'  prefetch={true} scroll={true}>Section2</Link>
+                        <Link href="#section2" className='hover:underline'  prefetch={false} scroll={true}>Section2</Link>
                     </li>
                     <li> 
-                        <Link href="#section3" className='hover:underline'  prefetch={true} scroll={true}>Section3</Link>
+                        <Link href="#section3" className='hover:underline'  prefetch={false} scroll={true}>Section3</Link>
                     </li>
                 </ul>
             </nav>
