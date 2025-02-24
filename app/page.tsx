@@ -5,7 +5,6 @@ export default function Home() {
   const specialChar = ["<Link>","<a>"] 
 
   return (
-    <>
       <div className="min-h-screen flex flex-col items-center gap-y-[80px] ">
         <div className="flex flex-col  items-center max-w-[1200px] gap-y-[40px] mt-[60px]">
           <h1 className="text-[#222126] font-bold text-[clamp(2rem,5vw,3rem)] text-left">{specialChar[0]} Component API Reference</h1>
@@ -21,18 +20,7 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="flex flex-col gap-y-[20px]">
-      
-     
-          <Link href="#section2" className="underline" scroll={true}>section 2</Link>
-     
-    
-          <Link href="#section3" className="underline" scroll={true}>section 3</Link>
-
-        </div>
       </div>
-      
-     
-      </>
+
   );
 }
