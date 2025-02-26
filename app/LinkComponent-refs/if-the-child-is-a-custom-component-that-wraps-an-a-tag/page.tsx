@@ -123,10 +123,11 @@ export default function NavLink() {
 
             <p>
                 <strong>Note:</strong> If the child of Link is a custom component that wraps an
-                <span>&lt;a&gt;</span> tag, you must add <code>passHref</code> to Link. This is necessary if you’re
+                <span>&lt;a&gt;</span> tag, you must add <code>passHref</code> to Link. This is necessary if you&rsquo;re
                 using libraries like styled-components. Without this, the <span>&lt;a&gt;</span> tag will not have
-                the href attribute, which hurts your site's accessibility and might affect SEO.
+                the href attribute, which hurts your site&apos;s accessibility and might affect SEO.
             </p>
+
         </section>
     );
 }
