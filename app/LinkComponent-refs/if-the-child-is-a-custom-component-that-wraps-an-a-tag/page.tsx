@@ -54,7 +54,7 @@ export default function NavLink() {
         <section className="w-full max-w-[850px] mx-auto pt-[50px] flex flex-col gap-y-[40px]">
             <div>
                 <h1 className="font-bold text-[2rem]">
-                    Custom Component that wraps an &lt;a&gt; tag from next.js Link Component
+                    Custom Component that wraps an {`<a>`} tag from next.js Link Component
                 </h1>
                 <hr className="border-b-[2px] border-[#222126]" />
             </div>
@@ -91,8 +91,8 @@ export default function NavLink() {
 
             <p>
                 <strong>Note:</strong> If the child of Link is a custom component that wraps an
-                &lt;a&gt; tag, you must add <code>passHref</code> to Link. This is necessary if you’re
-                using libraries like styled-components. Without this, the &lt;a&gt; tag will not have
+                {`<a>`} tag, you must add <code>passHref</code> to Link. This is necessary if you’re
+                using libraries like styled-components. Without this, the {`<a>`}; tag will not have
                 the href attribute, which hurts your site's accessibility and might affect SEO.
             </p>
         </section>
