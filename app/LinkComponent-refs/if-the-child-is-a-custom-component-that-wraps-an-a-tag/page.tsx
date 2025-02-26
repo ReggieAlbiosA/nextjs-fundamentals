@@ -1,4 +1,3 @@
-'use client';
 
 import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -25,6 +24,7 @@ export function OrangeLink() {
 
 export default function NavLink() {
     const linkComponents = [
+        { component: <RedLink />, color: 'red' },
         { component: <BlueLink />, color: 'blue' },
         { component: <GreenLink />, color: 'green' },
         { component: <YellowLink />, color: 'yellow' },
