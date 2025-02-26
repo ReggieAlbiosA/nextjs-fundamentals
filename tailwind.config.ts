@@ -6,6 +6,9 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'active' // Ensure Tailwind recognizes this class
+  ],
   theme: {
     extend: {
       colors: {

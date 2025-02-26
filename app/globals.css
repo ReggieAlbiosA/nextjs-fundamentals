@@ -25,3 +25,10 @@ body {
   overflow-x: hidden;
 }
 
+/* styles/globals.css */
+.link.active {
+  font-weight: bold !important;
+  color: red !important; /* Change this to your preferred active style */
+  text-decoration: underline !important;
+}
+

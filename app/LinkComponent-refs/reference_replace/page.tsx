@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function Page(){
     return (
-        <div className="w-screen h-screen flex flex-col justify-center items-center gap-y-[80px]">
+        <section className=" h-screen flex flex-col justify-center items-center gap-y-[80px]">
                 <Link 
                  href={{
                     pathname: "reference_replace/interparent"
@@ -16,6 +16,6 @@ export default function Page(){
                  replace={true}>
                     Click me 
                 </Link>
-        </div>
+        </section>
     )
 }
