@@ -1,135 +1,151 @@
+'use client';
 
-import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopy, faCheck } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
+import Link from 'next/link';
 
+interface PassableHrefProps {
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+  href?: string;
+  className?: string;
+  text?: string;
+}
+
+// Forward ref to support Next.js <Link>
+const PassableHref = React.forwardRef<HTMLAnchorElement, PassableHrefProps>(({ onClick, href, className, text }, ref) => {
+    return (
+      <a href={href} onClick={onClick} ref={ref} className={className}>
+        {text}
+      </a>
+    );
+  }
+);
+PassableHref.displayName = 'PassableHref'; // Fix React warning
 
 export default function NavLink() {
+  const [copied, setCopied] = useState(false);
 
-    function RedLink() {
-        return <a className="text-[red] underline">red link</a>;
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(code.trim());
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
     }
-    function BlueLink() {
-        return <a className="text-[blue] underline">blue link</a>;
-    }
-    function GreenLink() {
-        return <a className="text-[green] underline">green link</a>;
-    }
-    function YellowLink() {
-        return <a className="text-[yellow] underline">yellow link</a>;
-    }
-    function PurpleLink() {
-        return <a className="text-[purple] underline">purple link</a>;
-    }
-    function OrangeLink() {
-        return <a className="text-[orange] underline">orange link</a>;
-    }
+  };
 
-    const linkComponents = [
-        { component: <RedLink />, color: 'red' },
-        { component: <BlueLink />, color: 'blue' },
-        { component: <GreenLink />, color: 'green' },
-        { component: <YellowLink />, color: 'yellow' },
-        { component: <PurpleLink />, color: 'purple' },
-        { component: <OrangeLink />, color: 'orange' }
+  const Links = [
+    { textColor: 'text-red-500', text: 'red' },
+    { textColor: 'text-blue-500', text: 'blue' },
+    { textColor: 'text-green-500', text: 'green' },
+    { textColor: 'text-yellow-500', text: 'yellow' },
+    { textColor: 'text-purple-500', text: 'purple' },
+    { textColor: 'text-orange-500', text: 'orange' },
+  ];
+
+  const code = `
+interface PassableHrefProps {
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>;
+    href?: string;
+    className?: string;
+    text?: string;
+}
+
+// Forward ref to support Next.js <Link>
+const PassableHref = React.forwardRef<HTMLAnchorElement, PassableHrefProps>(
+    ({ onClick, href, className, text }, ref) => {
+    return (
+        <a href={href} onClick={onClick} ref={ref} className={className}>
+        {text}
+        </a>
+    );
+    }
+);
+PassableHref.displayName = 'PassableHref'; // Fix React warning
+
+export default function NavLink() {
+    const Links = [
+    { textColor: 'text-red-500', text: 'red' },
+    { textColor: 'text-blue-500', text: 'blue' },
+    { textColor: 'text-green-500', text: 'green' },
+    { textColor: 'text-yellow-500', text: 'yellow' },
+    { textColor: 'text-purple-500', text: 'purple' },
+    { textColor: 'text-orange-500', text: 'orange' },
     ];
 
-    const code = `
-
-    export function RedLink() {
-    return <a className="text-[red] underline">red link</a>;
-    }
-    export function BlueLink() {
-        return <a className="text-[blue] underline">blue link</a>;
-    }
-    export function GreenLink() {
-        return <a className="text-[green] underline">green link</a>;
-    }
-    export function YellowLink() {
-        return <a className="text-[yellow] underline">yellow link</a>;
-    }
-    export function PurpleLink() {
-        return <a className="text-[purple] underline">purple link</a>;
-    }
-    export function OrangeLink() {
-        return <a className="text-[orange] underline">orange link</a>;
-    }
-
-    export default function NavLink() {
-        const linkComponents = [
-            { component: <BlueLink />, color: 'blue' },
-            { component: <GreenLink />, color: 'green' },
-            { component: <YellowLink />, color: 'yellow' },
-            { component: <PurpleLink />, color: 'purple' },
-            { component: <OrangeLink />, color: 'orange' }
-        ];
-
-        return (
-            <ul className='list-disc pl-[20px]'>
-            {linkComponents.map(({ component, color }, index) => (
-                <li key={index}>
-                <Link 
-                    href={\`/LinkComponent-refs/if-the-child-is-a-custom-component-that-wraps-an-a-tag#\${color}\`}
-                    replace 
-                    passHref 
-                    legacyBehavior
-                    scroll={false}
-                >
-                    {component}
-                </Link>
-                </li>
-            ))}
-            </ul>
-        );
-        `;
-
-
     return (
-        <section className="w-full max-w-[850px] mx-auto pt-[50px] flex flex-col gap-y-[40px]">
-            <div>
-                <h1 className="font-bold text-[2rem]">
-                    Custom Component that wraps an <span>&lt;a&gt;</span> tag from next.js Link Component
-                </h1>
-                <hr className="border-b-[2px] border-[#222126]" />
-            </div>
-
-            <div>
-                <p>
-                    <strong>Example:</strong>
-                </p>
-                <SyntaxHighlighter language="javascript" style={oneDark}>
-                    {code}
-                </SyntaxHighlighter>
-            </div>
-
-            <div className="flex flex-col gap-y-[10px]">
-                <p>
-                    <strong>Output:</strong>
-                </p>
-                <ul className="list-disc pl-[20px]">
-                    {linkComponents.map(({ component, color }, index) => (
-                        <li key={index}>
-                            <Link
-                                href={`/LinkComponent-refs/if-the-child-is-a-custom-component-that-wraps-an-a-tag#${color}`}
-                                replace
-                                passHref
-                                legacyBehavior
-                                scroll={false}
-                            >
-                                {component}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            <p>
-                <strong>Note:</strong> If the child of Link is a custom component that wraps an
-                <span>&lt;a&gt;</span> tag, you must add <code>passHref</code> to Link. This is necessary if you&rsquo;re
-                using libraries like styled-components. Without this, the <span>&lt;a&gt;</span> tag will not have
-                the href attribute, which hurts your site&apos;s accessibility and might affect SEO.
-            </p>
-
-        </section>
+    <div className="flex flex-col gap-y-2">
+        <p><strong>Output:</strong></p>
+        <ul className="list-disc pl-5">
+        {Links.map(({ textColor, text }, index) => (
+            <li key={index}>
+            <Link
+                href={\`/LinkComponent-refs/if-the-child-is-a-custom-component-that-wraps-an-a-tag#\${encodeURIComponent(text)}\`}
+                replace
+                scroll={false} // Removed legacyBehavior and passHref
+                className={\`\${textColor} underline\`}
+            >
+                {text}
+            </Link>
+            </li>
+        ))}
+        </ul>
+    </div>
     );
+}
+  `;
+  
+  return (
+    <section className="w-full max-w-[850px] mx-auto pt-12 flex flex-col gap-y-10">
+      {/* Title */}
+      <div>
+        <h1 className="font-bold text-2xl">
+          Custom Component that wraps an <span>&lt;a&gt;</span> tag from Next.js Link
+        </h1>
+        <hr className="border-b-2 border-gray-800" />
+      </div>
+
+      {/* Code Block with Copy Button */}
+     <div className='relative'>
+        <button className='flex gap-x-2 items-center text-[gray] absolute right-6 top-4' onClick={handleCopy}>
+            <FontAwesomeIcon icon={copied ? faCheck : faCopy} color='gray'/>
+            {copied ? 'Copied!' : 'Copy'}
+        </button>
+        <SyntaxHighlighter language="javascript" style={oneDark}>
+            {code}
+        </SyntaxHighlighter>
+     </div>
+
+      {/* Output Links */}
+      <div className="flex flex-col gap-y-2">
+        <p><strong>Output:</strong></p>
+        <ul className="list-disc pl-5">
+          {Links.map(({ textColor, text }, index) => (
+            <li key={index}>
+              <Link
+                href={`/LinkComponent-refs/if-the-child-is-a-custom-component-that-wraps-an-a-tag#${text}`}
+                replace
+                passHref
+                legacyBehavior
+                scroll={false}
+              >
+                <PassableHref className={`${textColor} underline`} text={text} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Explanation */}
+      <p>
+        <strong>Note:</strong> If the child of {'<a>'} is a custom component that wraps an
+        {'<a>'} tag, you must add <code>passHref</code> to {'<a>'}. This ensures the {'<a>'}` tag receives
+        the `href` attribute, improving accessibility and SEO.
+      </p>
+    </section>
+  );
 }

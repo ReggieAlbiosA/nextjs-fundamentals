@@ -44,6 +44,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         : 'text-gray-700 hover:bg-gray-100'
                     }`}
                     replace
+                    prefetch={true}
                     >
                     {link.name}
                     </Link>
@@ -56,9 +57,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <code className="bg-gray-800 text-white p-2 rounded-md block">{pathname}</code>
             </div>
             </nav>
-
         <div className='grid place-items-center text-[4rem] font-bold mt-[200px]'>{children}</div>
-
     </section>
     </>
     );
