@@ -3,26 +3,28 @@ import Link from 'next/link';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-export function RedLink() {
-    return <a className="text-[red] underline">red link</a>;
-}
-export function BlueLink() {
-    return <a className="text-[blue] underline">blue link</a>;
-}
-export function GreenLink() {
-    return <a className="text-[green] underline">green link</a>;
-}
-export function YellowLink() {
-    return <a className="text-[yellow] underline">yellow link</a>;
-}
-export function PurpleLink() {
-    return <a className="text-[purple] underline">purple link</a>;
-}
-export function OrangeLink() {
-    return <a className="text-[orange] underline">orange link</a>;
-}
 
 export default function NavLink() {
+
+    function RedLink() {
+        return <a className="text-[red] underline">red link</a>;
+    }
+    function BlueLink() {
+        return <a className="text-[blue] underline">blue link</a>;
+    }
+    function GreenLink() {
+        return <a className="text-[green] underline">green link</a>;
+    }
+    function YellowLink() {
+        return <a className="text-[yellow] underline">yellow link</a>;
+    }
+    function PurpleLink() {
+        return <a className="text-[purple] underline">purple link</a>;
+    }
+    function OrangeLink() {
+        return <a className="text-[orange] underline">orange link</a>;
+    }
+
     const linkComponents = [
         { component: <RedLink />, color: 'red' },
         { component: <BlueLink />, color: 'blue' },
