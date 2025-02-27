@@ -18,7 +18,6 @@ export const metadata: Metadata = {
   description: "Learning Next.js fundamentals",
 };
 
-
   
 
 export default function RootLayout({

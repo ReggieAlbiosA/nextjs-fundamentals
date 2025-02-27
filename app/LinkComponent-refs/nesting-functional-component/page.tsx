@@ -104,7 +104,7 @@ export default function Page(){
 
             <p className='flex items-center gap-x-[10px]'>
                 <strong>Description:</strong>
-                <br/>forwardRef is a React function that allows a component to pass down a ref to one of its child elements. This is useful when you need direct access to a DOM element or a child component's instance.
+                <br/>forwardRef is a React function that allows a component to pass down a ref to one of its child elements. This is useful when you need direct access to a DOM element or a child component&apos;s instance.
             </p>
 
             <div>
