@@ -12,7 +12,7 @@ export function PostList({ posts }: { posts: Post[] }) {
         <ul className='list-disc pl-[20px] text-[1.3rem]'>
         {posts.map((post) => (
             <li key={post.id}>
-            <Link className='hover:underline' href={`/LinkComponent-refs/reference_prefetch/scientific-discoveries/${post.parentSlug}/${post.childSlug}`}>{post.title}</Link>
+            <Link className='hover:underline' prefetch href={`/LinkComponent-refs/reference_prefetch/scientific-discoveries/${post.parentSlug}/${post.childSlug}`}>{post.title}</Link>
             </li>
         ))}
         </ul>

@@ -102,7 +102,13 @@ export default function Page(){
                 <hr className="border-b-[2px] border-[#222126]" />
             </div>
 
+            <p className='flex items-center gap-x-[10px]'>
+                <strong>Description:</strong>
+                <br/>forwardRef is a React function that allows a component to pass down a ref to one of its child elements. This is useful when you need direct access to a DOM element or a child component's instance.
+            </p>
+
             <div>
+              
                 <p>
                     <strong>Example:</strong>
                 </p>
@@ -136,7 +142,7 @@ export default function Page(){
                   <p>
                       <strong>Without using React.ForwardRefRenderFunction: </strong>
                       <Link href="/LinkComponent-refs/nesting-functional-component/test"  passHref legacyBehavior>
-                          <NonPassableHref className="underline"/>
+                          <NonPassableHref className="text-[red] underline"/>
                       </Link>
                   </p>
               </div>

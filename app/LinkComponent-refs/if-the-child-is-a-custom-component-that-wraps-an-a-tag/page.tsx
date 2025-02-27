@@ -133,7 +133,7 @@ export default function NavLink() {
                 legacyBehavior
                 scroll={false}
               >
-                <PassableHref className={`${textColor} underline`} text={text} />
+                <PassableHref className={`${textColor} underline`} text={`${text} link`} />
               </Link>
             </li>
           ))}
