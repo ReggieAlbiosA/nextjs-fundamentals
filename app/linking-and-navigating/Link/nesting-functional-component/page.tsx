@@ -132,7 +132,7 @@ export default function Page(){
               <div>
                   <p>
                       <strong>With using React.ForwardRefRenderFunction: </strong>
-                      <Link href="/LinkComponent-refs/nesting-functional-component/test" className="underline" passHref legacyBehavior>
+                      <Link href="/Link/nesting-functional-component/test" className="underline" passHref legacyBehavior>
                         <ForwardedPassableHref className='underline'/>
                       </Link>
                   </p>
@@ -141,7 +141,7 @@ export default function Page(){
               <div>
                   <p>
                       <strong>Without using React.ForwardRefRenderFunction: </strong>
-                      <Link href="/LinkComponent-refs/nesting-functional-component/test"  passHref legacyBehavior>
+                      <Link href="/Link/nesting-functional-component/test"  passHref legacyBehavior>
                           <NonPassableHref className="text-[red] underline"/>
                       </Link>
                   </p>

@@ -10,7 +10,7 @@ export default function Page(){
         <section className=" h-screen flex flex-col justify-center items-center gap-y-[80px]">
                 <Link 
                  href={{
-                    pathname: "reference_replace/interparent"
+                    pathname: "replace/interparent"
                   }} 
                  className="p-[7px_20px] bg-blue-600 rounded text-white" 
                  replace={true}>

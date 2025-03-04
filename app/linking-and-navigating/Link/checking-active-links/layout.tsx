@@ -4,11 +4,11 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 const navLinks = [
-  { name: 'Home', href: '/LinkComponent-refs/checking-active-links' },
-  { name: 'About', href: '/LinkComponent-refs/checking-active-links/about' },
-  { name: 'Services', href: '/LinkComponent-refs/checking-active-links/services' },
-  { name: 'Blog', href: '/LinkComponent-refs/checking-active-links/blog' },
-  { name: 'Contact', href: '/LinkComponent-refs/checking-active-links/contact' }
+  { name: 'Home', href: '/linking-and-navigating/Link/checking-active-links' },
+  { name: 'About', href: '/linking-and-navigating/Link/checking-active-links/about' },
+  { name: 'Services', href: '/linking-and-navigating/Link/checking-active-links/services' },
+  { name: 'Blog', href: '/linking-and-navigating/Link/checking-active-links/blog' },
+  { name: 'Contact', href: '/linking-and-navigating/Link/checking-active-links/contact' }
 ];
 
 
@@ -29,11 +29,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <nav className="p-4 bg-white shadow rounded-lg">
             <div className="flex flex-wrap gap-x-6 gap-y-2 w-max mx-auto">
                 {navLinks.map((link) => {
-                // Check if the current route matches the link
+              
                 const isActive = pathname === link.href;
-                
-                // For nested routes, you can use: pathname.startsWith(link.href) && link.href !== '/'
-                // For exact match only, use: pathname === link.href
 
                 return (
                     <Link

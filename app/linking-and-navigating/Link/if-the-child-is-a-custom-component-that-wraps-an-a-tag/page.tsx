@@ -127,7 +127,7 @@ export default function NavLink() {
           {Links.map(({ textColor, text }, index) => (
             <li key={index}>
               <Link
-                href={`/LinkComponent-refs/if-the-child-is-a-custom-component-that-wraps-an-a-tag#${text}`}
+                href={`/Link/if-the-child-is-a-custom-component-that-wraps-an-a-tag#${text}`}
                 replace
                 passHref
                 legacyBehavior

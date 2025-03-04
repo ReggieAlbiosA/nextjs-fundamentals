@@ -33,8 +33,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <li key={post.id}>
             <Link 
               className='hover:underline' 
-              prefetch={true} 
-              href={`/LinkComponent-refs/reference_prefetch/scientific-discoveries/${post.category}/${post.topic}`}
+              href={`/linking-and-navigating/Link/prefetch/scientific-discoveries/${post.category}/${post.topic}`}
             >
               {post.title}
             </Link>

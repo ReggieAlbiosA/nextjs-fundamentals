@@ -10,7 +10,6 @@ export default async function Page({ params }: { params: Promise<{ nav: string }
 
     const { nav } = await params;
 
-
     return (
         <h1>This is {convertToTitleCase(nav)} page</h1>
     );

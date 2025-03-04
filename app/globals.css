@@ -32,3 +32,30 @@ body {
   text-decoration: underline !important;
 }
 
+/* animations */
+
+@keyframes fastBeep {
+  0% {
+    opacity: 0.1;
+    
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: .1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fast-beep{
+  animation: fastBeep .5s forwards;
+}

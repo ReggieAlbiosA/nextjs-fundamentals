@@ -19,11 +19,11 @@ export default function Page() {
       <div>
         <ul className="list-disc pl-[20px] text-[1.3rem]">
           {scientificDiscoveries_static.map((link) => {
-            const linkPath = `/LinkComponent-refs/reference_prefetch/scientific-discoveries/${link.slug}`;
+            const linkPath = `/linking-and-navigating/Link/prefetch/scientific-discoveries/${link.slug}`;
 
             return (
               <li key={link.id}>
-                <Link className="hover:underline" href={linkPath} prefetch>
+                <Link className="hover:underline" href={linkPath}>
                   {link.title}
                 </Link>
               </li>
