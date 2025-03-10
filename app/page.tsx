@@ -18,6 +18,18 @@ export default function Home() {
 
         <div className="max-w-[1200px] w-full flex flex-col gap-y-[40px]">
           <div>
+            <h1 className="font-bold text-[1.5rem]">Project Structure</h1>
+            <ul className="list-disc pl-[20px]">
+              <li className="underline"><Link href="/linking-and-navigating">Routing Files</Link></li>
+              <li className="underline"><Link href="/linking-and-navigating">Dynamic routes</Link></li>
+              <li className="underline"><Link href="/linking-and-navigating">Route Groups and private folders</Link></li>
+              <li className="underline"><Link href="/linking-and-navigating">Parallel and Intercepted Routes</Link></li>
+              <li className="underline"><Link href="/linking-and-navigating">Routing Files</Link></li>
+              <li className="underline"><Link href="/linking-and-navigating">Routing Files</Link></li>
+            </ul>
+          </div>
+
+          <div>
             <h1 className="font-bold text-[1.5rem]">Routing</h1>
             <ul className="list-disc pl-[20px]">
               <li className="underline"><Link href="/linking-and-navigating">Linking and Navigating</Link></li>

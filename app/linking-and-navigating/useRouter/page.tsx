@@ -23,6 +23,14 @@ export default function Page() {
             </ul>
           </div>
 
+          <div>
+            <h1 className="font-bold text-[1.5rem]">More Example use of Cases</h1>
+            <ul className="list-disc pl-[20px]">
+              <li className="underline"><Link href="/linking-and-navigating/useRouter/router-events">Router events</Link></li>
+              <li className="underline"><Link href="/linking-and-navigating/useRouter/disabling-scroll-to-top">Disabling scroll to top</Link></li>
+            </ul>
+          </div>
+
         </div>
 
       </section>

@@ -1,19 +1,16 @@
-// import { PostList } from './post-list';
 import Link from 'next/link';
 import { scientificDiscoveriesCategoryTopics } from '@/metadata/scientific-discoveries-category-topics';
 
-// ✅ Generate static paths
 export async function generateStaticParams() {
-  return Object.keys(scientificDiscoveriesCategoryTopics).map((slug) => ({ slug }));
+  return Object.entries(scientificDiscoveriesCategoryTopics).flatMap(([category, data]) =>
+    data.links.map((link) => ({
+      category,
+      topic: link.topic,
+    }))
+  );
 }
-
-// ✅ Using proper Promise handling
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  // Await the entire params object first
-  const resolvedParams = await params;
-  // Then await the slug property
-  const slug = resolvedParams.slug;
-  
+export default async function Page({ params }: { params: Promise<{ slug: string }> } ) {
+  const { slug } = await params;
   const pageData = scientificDiscoveriesCategoryTopics[slug];
 
   if (!pageData) {
@@ -27,20 +24,20 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <hr className='border-b-[2px] border-[#222126]'/>
       </div>
 
-      <div>
-      <ul className='list-disc pl-[20px] text-[1.3rem]'>
-        {pageData.links.map((post) => (
-            <li key={post.id}>
-            <Link 
-              className='hover:underline' 
-              href={`/linking-and-navigating/Link/prefetch/scientific-discoveries/${post.category}/${post.topic}`}
-            >
-              {post.title}
-            </Link>
+      <nav>
+        <ul className='list-disc pl-[20px] text-[1.3rem]'>
+          {pageData.links.map(({ id, title, category, topic }) => (
+            <li key={id}>
+              <Link 
+                className='hover:underline' 
+                href={`/linking-and-navigating/Link/prefetch/scientific-discoveries/${category}/${topic}`}
+              >
+                {title}
+              </Link>
             </li>
-        ))}
+          ))}
         </ul>
-      </div>
+      </nav>
     </section>
   );
 }

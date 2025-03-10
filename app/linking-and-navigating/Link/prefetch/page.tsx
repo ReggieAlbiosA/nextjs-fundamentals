@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
-const scientificDiscoveries_static = [
+const SCIENTIFIC_DISCOVERIES = [
   { id: 1, title: "Physics & Space", slug: "physics-space" },
   { id: 2, title: "Biology & Medicine", slug: "biology-medicine" },
   { id: 3, title: "Chemistry", slug: "chemistry" },
   { id: 4, title: "Earth & Environmental Science", slug: "earth-environmental-science" },
   { id: 5, title: "Technology & Computing", slug: "technology-computing" },
-];
+] as const;
 
 export default function Page() {
   return (
@@ -16,21 +16,20 @@ export default function Page() {
         <hr className="border-b-[2px] border-[#222126]" />
       </div>
 
-      <div>
+      <nav>
         <ul className="list-disc pl-[20px] text-[1.3rem]">
-          {scientificDiscoveries_static.map((link) => {
-            const linkPath = `/linking-and-navigating/Link/prefetch/scientific-discoveries/${link.slug}`;
-
-            return (
-              <li key={link.id}>
-                <Link className="hover:underline" href={linkPath}>
-                  {link.title}
-                </Link>
-              </li>
-            );
-          })}
+          {SCIENTIFIC_DISCOVERIES.map(({ id, title, slug }) => (
+            <li key={id}>
+              <Link 
+                className="hover:underline" 
+                href={`/linking-and-navigating/Link/prefetch/scientific-discoveries/${slug}`}
+              >
+                {title}
+              </Link>
+            </li>
+          ))}
         </ul>
-      </div>
+      </nav>
     </section>
   );
 }
