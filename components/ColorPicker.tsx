@@ -19,9 +19,11 @@ export default function ColorPicker() {
 
     return (
         <ChromePicker
+            className='cursor-pointer'
             color={colorCode}
             onChange={(newColor) => {
                 setColorCode(newColor.hex);
+                router.prefetch(`/color-picker/${newColor.hex.replace('#', '')}`);
                 router.push(`/color-picker/${newColor.hex.replace('#', '')}`);
             }}
         />

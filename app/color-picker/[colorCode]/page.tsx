@@ -2,6 +2,6 @@ export default async function Page({ params }: { params: Promise<{  colorCode: s
     const { colorCode } = await params;
 
     return (
-        <h1>Color Code: {colorCode}</h1>
+        <h1>Color Code: #{colorCode}</h1>
     );
 }
