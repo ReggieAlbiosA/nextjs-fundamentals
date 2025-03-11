@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import './fontawesome';
 import { Suspense } from 'react'
-import { NavigationEvents } from './components/navigation-events'
+import { NavigationEvents } from '@/components/navigation-events'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

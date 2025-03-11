@@ -16,11 +16,11 @@ NProgress.configure({
 // Add custom styles for black color
 const npProgressStyle = `
   #nprogress .bar {
-    background: #000000 !important;
+    background: var(--foreground) !important;
     height: 3px;
   }
   #nprogress .peg {
-    box-shadow: 0 0 10px #000000, 0 0 5px #000000;
+    box-shadow: 0 0 10px var(--foreground), 0 0 5px var(--foreground);
   }
 `
 

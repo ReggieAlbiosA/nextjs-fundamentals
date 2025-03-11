@@ -4,10 +4,8 @@ import Link from "next/link";
 
 export default function Home() {
 
-
   useEffect(() => {
     console.log(window.history.length); // Number of entries in session history
-
   }, []);
 
   return (
@@ -20,12 +18,10 @@ export default function Home() {
           <div>
             <h1 className="font-bold text-[1.5rem]">Project Structure</h1>
             <ul className="list-disc pl-[20px]">
-              <li className="underline"><Link href="/linking-and-navigating">Routing Files</Link></li>
-              <li className="underline"><Link href="/linking-and-navigating">Dynamic routes</Link></li>
-              <li className="underline"><Link href="/linking-and-navigating">Route Groups and private folders</Link></li>
-              <li className="underline"><Link href="/linking-and-navigating">Parallel and Intercepted Routes</Link></li>
-              <li className="underline"><Link href="/linking-and-navigating">Routing Files</Link></li>
-              <li className="underline"><Link href="/linking-and-navigating">Routing Files</Link></li>
+              <li className="underline"><Link href="/u">Routing Files</Link></li>
+              <li className="underline"><Link href="/u">Dynamic routes</Link></li>
+              <li className="underline"><Link href="/u">Route Groups and private folders</Link></li>
+              <li className="underline"><Link href="/u">Parallel and Intercepted Routes</Link></li>
             </ul>
           </div>
 
@@ -33,6 +29,13 @@ export default function Home() {
             <h1 className="font-bold text-[1.5rem]">Routing</h1>
             <ul className="list-disc pl-[20px]">
               <li className="underline"><Link href="/linking-and-navigating">Linking and Navigating</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h1 className="font-bold text-[1.5rem]">Real World Web Apps</h1>
+            <ul className="list-disc pl-[20px]">
+              <li className="underline"><Link href="/color-picker/ff0000">Color picker</Link></li>
             </ul>
           </div>
         </div>

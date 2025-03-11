@@ -41,18 +41,18 @@ export default function RouterPrefetchDemo() {
   };
 
   // Function to handle mouse hover over a link
-  // const handleHover = (route: string): void => {
-  //   // Record hover in history
-  //   setHoverHistory(prev => [...prev, `Hovered over ${route} at ${new Date().toLocaleTimeString()}`]);
+  const handleHover = (route: string): void => {
+    // Record hover in history
+    setHoverHistory(prev => [...prev, `Hovered over ${route} at ${new Date().toLocaleTimeString()}`]);
     
-  //   // If not already prefetched, add to our list
-  //   if (!prefetchedRoutes.includes(route)) {
-  //     setPrefetchedRoutes(prev => [...prev, route]);
+    // If not already prefetched, add to our list
+    if (!prefetchedRoutes.includes(route)) {
+      setPrefetchedRoutes(prev => [...prev, route]);
       
-  //     // Use the router to prefetch the route
-  //     router.prefetch(route);
-  //   }
-  // };
+      // Use the router to prefetch the route
+      router.prefetch(route);
+    }
+  };
 
   // Demonstrate automatic prefetching on component mount
   useEffect(() => {
@@ -104,7 +104,7 @@ export default function RouterPrefetchDemo() {
             >
               <Link 
                 href={route.path}
-                // onMouseEnter={() => handleHover(route.path)}
+                onMouseEnter={() => handleHover(route.path)}
                 className="text-blue-600 hover:underline"
               >
                 {route.name}
