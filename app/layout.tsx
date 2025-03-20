@@ -35,11 +35,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased p-[0_5%] pb-[100px]`}
       >
-        
+
         <main> {children}</main>
           <Suspense fallback={null}>
             <NavigationEvents />
           </Suspense>
+
       </body>
     </html>
   );
