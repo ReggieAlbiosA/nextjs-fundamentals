@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background: #e2e0e0;
+  --foreground: #171717;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+button{
+  cursor: pointer;
+}
+
+/* animations */
+@keyframes fastBeep {
+  0% {
+    opacity: 0.1; 
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: .1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fast-beep{
+  animation: fastBeep .5s forwards;
+}
